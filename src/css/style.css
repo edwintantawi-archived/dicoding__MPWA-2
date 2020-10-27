@@ -267,7 +267,7 @@ header .hero p {
 
 header .scroll-it {
   position: absolute;
-  bottom: 180px;
+  bottom: 140px;
   z-index: 998;
   cursor: pointer;
 }
