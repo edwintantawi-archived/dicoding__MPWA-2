@@ -9,7 +9,7 @@ main {
   // standings page
   .standings {
     h2 {
-      font-size: 23px;
+      font-size: 32px;
       @include breakpoint(md) {
         font-size: 52px;
       }
@@ -17,7 +17,7 @@ main {
     .col {
       padding: 0;
 
-      @include breakpoint(lg) {
+      @include breakpoint(sm) {
         padding: 12px;
       }
     }
@@ -27,12 +27,20 @@ main {
       color: white;
       padding: 32px 16px 16px;
       border-radius: 6px;
-      margin-bottom: 24px;
+      margin-bottom: 12px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include breakpoint(sm) {
+        height: 530px;
+      }
 
       img {
-        width: 140px;
+        height: 160px;
         @include breakpoint(sm) {
-          width: 160px;
+          height: 160px;
         }
       }
 

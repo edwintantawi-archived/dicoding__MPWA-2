@@ -24,7 +24,7 @@ class NavBar extends HTMLElement{
             </div>
 
             <ul id="navigation" class="right hide-on-med-and-down">
-              <li><a href="#" class="active"><i class="material-icons">equalizer</i> Standing's</a></li>
+              <li><a href="/index.html#topstart" class="active"><i class="material-icons">equalizer</i> Standing's</a></li>
               <li><a href="#"><i class="material-icons">people</i> Team's</a></li>
               <li><a href="#"><i class="material-icons">bookmark</i> Bookmark</a></li>
             </ul>
@@ -39,7 +39,7 @@ class NavBar extends HTMLElement{
           <i class="material-icons">people</i>
           <small>Team's</small>
           </a></li>
-          <li><a href="#" class="active waves-effect waves-dark">
+          <li><a href="/index.html#topstart" class="active waves-effect waves-dark">
           <i class="material-icons">equalizer</i>
           <small>Standing's</small>
           </a></li>

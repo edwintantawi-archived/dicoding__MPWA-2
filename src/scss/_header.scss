@@ -28,9 +28,11 @@ header {
     z-index: 9;
     color: white;
     margin-top: 0;
+    margin-bottom: 30px;
 
     @include breakpoint(md) {
       margin-top: 40px;
+      margin-bottom: 0;
     }
 
     img {
@@ -82,5 +84,14 @@ header {
     @include breakpoint(md) {
       width: 300px;
     }
+  }
+}
+
+#topstart {
+  position: absolute;
+  bottom: 85px;
+
+  @include breakpoint(md) {
+    bottom: 100px;
   }
 }

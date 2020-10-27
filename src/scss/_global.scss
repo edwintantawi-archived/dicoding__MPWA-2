@@ -2,11 +2,11 @@
   font-family: "Montserrat", sans-serif;
   // 300,500,700
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   height: 9999px;
-  // background-color: rgb(31, 31, 31);
-  // color: white;
 }
 
 h1 {
