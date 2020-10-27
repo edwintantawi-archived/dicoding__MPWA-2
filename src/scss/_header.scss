@@ -27,7 +27,7 @@ header {
     position: relative;
     z-index: 9;
     color: white;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
 
     img {
       width: 150px;
@@ -62,18 +62,18 @@ header {
     }
   }
 
-  .scroll-it {
-    position: absolute;
-    bottom: 140px;
-    z-index: 998;
-    cursor: pointer;
+  // .scroll-it {
+  //   position: absolute;
+  //   bottom: 140px;
+  //   z-index: 998;
+  //   cursor: pointer;
 
-    @include breakpoint(md) {
-      bottom: 38px;
-    }
+  //   @include breakpoint(md) {
+  //     bottom: 38px;
+  //   }
 
-    img {
-      width: 18px;
-    }
-  }
+  //   img {
+  //     width: 18px;
+  //   }
+  // }
 }
