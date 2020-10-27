@@ -1,10 +1,10 @@
-const baseUrl = "http://api.football-data.org/v2";
+const baseUrl = "https://api.football-data.org/v2";
 const apiKey = "b0825830f1724f13987c4b6ffb0ab92f";
 const league = "2021" //liga inggris / Premier League
 
 
 const getStandings = async () => {
-  try{
+  try {
     const respond = await fetch(`${baseUrl}/competitions/${league}/standings`, {
       headers: {
         "X-Auth-Token": apiKey
@@ -13,7 +13,7 @@ const getStandings = async () => {
     const data = await respond.json();
     const standings = data.standings[0].table
     let dataHTML = ""
-    standings.forEach(function(standing){
+    standings.forEach(function (standing) {
       dataHTML += `
         <div class="col s12 m6 xl4">
           <div class="standing-cards">
@@ -59,7 +59,7 @@ const getStandings = async () => {
     })
     document.querySelector("#standing-list").innerHTML = dataHTML;
 
-  } catch(error){
+  } catch (error) {
     console.log(error)
     handleError();
   }
