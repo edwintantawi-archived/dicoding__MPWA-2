@@ -222,7 +222,6 @@ header .hero {
   position: relative;
   z-index: 9;
   color: white;
-  margin-top: 26px;
 }
 
 header .hero img {
@@ -267,7 +266,7 @@ header .hero p {
 
 header .scroll-it {
   position: absolute;
-  bottom: 86px;
+  bottom: 120px;
   z-index: 998;
   cursor: pointer;
 }
