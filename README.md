@@ -1,5 +1,5 @@
 # FootBall-League
 submission 2 Dicoding pwa
 
-##Live Web
+## Live Web
 https://footballleague-pwa.netlify.app/
