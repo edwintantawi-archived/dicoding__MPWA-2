@@ -1,7 +1,90 @@
 main {
   margin-top: 32px;
+  padding: 0;
 
   @include breakpoint(md) {
     margin-top: 50px;
+  }
+
+  // standings page
+  .standings {
+    h2 {
+      font-size: 23px;
+      @include breakpoint(md) {
+        font-size: 52px;
+      }
+    }
+    .col {
+      padding: 0;
+
+      @include breakpoint(lg) {
+        padding: 12px;
+      }
+    }
+    .standing-cards {
+      background-color: $attr;
+      text-align: center;
+      color: white;
+      padding: 32px 16px 16px;
+      border-radius: 6px;
+      margin-bottom: 24px;
+
+      img {
+        width: 140px;
+        @include breakpoint(sm) {
+          width: 160px;
+        }
+      }
+
+      h3 {
+        margin: 12px 0 21px;
+        font-size: 18px;
+        font-weight: 700;
+
+        @include breakpoint(md) {
+          font-size: 26px;
+        }
+      }
+
+      .detail {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        padding: 16px;
+
+        .line {
+          display: flex;
+          justify-content: space-between;
+          font-size: 16px;
+          padding: 6px 0;
+
+          @include breakpoint(sm) {
+            font-size: 18px;
+          }
+
+          span {
+            font-weight: 700;
+            i {
+              margin-right: 8px;
+
+              &.fa-trophy {
+                color: gold;
+              }
+              &.fa-window-close {
+                color: rgb(231, 1, 1);
+              }
+              &.fa-equals {
+                color: rgb(35, 219, 35);
+              }
+              &.fa-coins {
+                color: yellow;
+              }
+              &.fa-futbol {
+                color: rgb(211, 211, 211);
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

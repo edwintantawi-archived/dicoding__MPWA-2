@@ -69,11 +69,15 @@ nav {
   .dark-mode {
     position: relative;
     top: 50%;
-    transform: translateY(40%);
+    transform: translateY(50%);
     margin-left: 24px;
 
+    @include breakpoint(md) {
+      transform: translateY(40%);
+    }
+
     .toggle-body {
-      width: 66px;
+      width: 55px;
       align-items: center;
       background-color: white;
       border-radius: 50px;
@@ -87,8 +91,8 @@ nav {
       }
 
       .toggle-dot {
-        width: 22px;
-        height: 22px;
+        width: 18px;
+        height: 18px;
         border-radius: 50px;
         background-color: $secondary;
 

@@ -18,7 +18,7 @@ body.dark-mode {
     }
     .toggle-dot {
       background-color: white;
-      transform: translateX(155%);
+      transform: translateX(150%);
 
       @include breakpoint(md) {
         transform: translateX(175%);
@@ -33,6 +33,23 @@ body.dark-mode {
   header {
     &::after {
       background-image: radial-gradient(#0000007e, $primaryDark);
+    }
+  }
+
+  .banner-league {
+    background-color: rgb(42, 42, 42);
+
+    svg {
+      #path44_1_,
+      #path56 {
+        fill: #fff !important;
+      }
+    }
+  }
+
+  .standings {
+    .standing-cards {
+      background-color: $attrDark;
     }
   }
 }

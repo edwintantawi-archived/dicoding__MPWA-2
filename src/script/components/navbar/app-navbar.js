@@ -24,8 +24,8 @@ class NavBar extends HTMLElement{
             </div>
 
             <ul id="navigation" class="right hide-on-med-and-down">
-              <li><a href="#" class="active"><i class="material-icons">home</i> Home</a></li>
-              <li><a href="#"><i class="material-icons">event</i> Event</a></li>
+              <li><a href="#" class="active"><i class="material-icons">equalizer</i> Standing's</a></li>
+              <li><a href="#"><i class="material-icons">people</i> Team's</a></li>
               <li><a href="#"><i class="material-icons">bookmark</i> Bookmark</a></li>
             </ul>
 
@@ -36,12 +36,12 @@ class NavBar extends HTMLElement{
       </nav>
       <ul id="mobile-nav">
         <li><a href="#" class="waves-effect waves-dark">
-          <i class="material-icons">event</i>
-          <small>Event</small>
+          <i class="material-icons">people</i>
+          <small>Team's</small>
           </a></li>
           <li><a href="#" class="active waves-effect waves-dark">
-          <i class="material-icons">home</i>
-          <small>Home</small>
+          <i class="material-icons">equalizer</i>
+          <small>Standing's</small>
           </a></li>
           <li><a href="#" class="waves-effect waves-dark">
           <i class="material-icons">bookmark</i>

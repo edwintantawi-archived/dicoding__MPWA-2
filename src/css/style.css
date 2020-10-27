@@ -10,6 +10,21 @@ h1 {
   margin: 0 0 24px 0;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dba527;
+}
+
 nav {
   background-color: transparent;
   height: 80px;
@@ -101,13 +116,20 @@ nav #navigation li:last-child a {
 nav .dark-mode {
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(40%);
-          transform: translateY(40%);
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
   margin-left: 24px;
 }
 
+@media (min-width: 768px) {
+  nav .dark-mode {
+    -webkit-transform: translateY(40%);
+            transform: translateY(40%);
+  }
+}
+
 nav .dark-mode .toggle-body {
-  width: 66px;
+  width: 55px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -126,8 +148,8 @@ nav .dark-mode .toggle-body {
 }
 
 nav .dark-mode .toggle-body .toggle-dot {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   border-radius: 50px;
   background-color: #dba527;
 }
@@ -222,6 +244,7 @@ header .hero {
   position: relative;
   z-index: 9;
   color: white;
+  margin-top: 40px;
 }
 
 header .hero img {
@@ -264,14 +287,139 @@ header .hero p {
   }
 }
 
+.banner-league {
+  background-color: #bde0ff;
+  text-align: center;
+  padding: 18px 0;
+}
+
+@media (min-width: 768px) {
+  .banner-league {
+    padding: 50px 0;
+  }
+}
+
+.banner-league svg {
+  width: 150px;
+}
+
+@media (min-width: 768px) {
+  .banner-league svg {
+    width: 300px;
+  }
+}
+
 main {
   margin-top: 32px;
+  padding: 0;
 }
 
 @media (min-width: 768px) {
   main {
     margin-top: 50px;
   }
+}
+
+main .standings h2 {
+  font-size: 23px;
+}
+
+@media (min-width: 768px) {
+  main .standings h2 {
+    font-size: 52px;
+  }
+}
+
+main .standings .col {
+  padding: 0;
+}
+
+@media (min-width: 992px) {
+  main .standings .col {
+    padding: 12px;
+  }
+}
+
+main .standings .standing-cards {
+  background-color: #003686;
+  text-align: center;
+  color: white;
+  padding: 32px 16px 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+}
+
+main .standings .standing-cards img {
+  width: 140px;
+}
+
+@media (min-width: 576px) {
+  main .standings .standing-cards img {
+    width: 160px;
+  }
+}
+
+main .standings .standing-cards h3 {
+  margin: 12px 0 21px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  main .standings .standing-cards h3 {
+    font-size: 26px;
+  }
+}
+
+main .standings .standing-cards .detail {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+main .standings .standing-cards .detail .line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 16px;
+  padding: 6px 0;
+}
+
+@media (min-width: 576px) {
+  main .standings .standing-cards .detail .line {
+    font-size: 18px;
+  }
+}
+
+main .standings .standing-cards .detail .line span {
+  font-weight: 700;
+}
+
+main .standings .standing-cards .detail .line span i {
+  margin-right: 8px;
+}
+
+main .standings .standing-cards .detail .line span i.fa-trophy {
+  color: gold;
+}
+
+main .standings .standing-cards .detail .line span i.fa-window-close {
+  color: #e70101;
+}
+
+main .standings .standing-cards .detail .line span i.fa-equals {
+  color: #23db23;
+}
+
+main .standings .standing-cards .detail .line span i.fa-coins {
+  color: yellow;
+}
+
+main .standings .standing-cards .detail .line span i.fa-futbol {
+  color: lightgray;
 }
 
 footer {
@@ -302,8 +450,8 @@ body.dark-mode .dark-mode .toggle-body {
 
 body.dark-mode .dark-mode .toggle-dot {
   background-color: white;
-  -webkit-transform: translateX(155%);
-          transform: translateX(155%);
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
 }
 
 @media (min-width: 768px) {
@@ -319,5 +467,18 @@ body.dark-mode #mobile-nav {
 
 body.dark-mode header::after {
   background-image: radial-gradient(#0000007e, #242424);
+}
+
+body.dark-mode .banner-league {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .banner-league svg #path44_1_,
+body.dark-mode .banner-league svg #path56 {
+  fill: #fff !important;
+}
+
+body.dark-mode .standings .standing-cards {
+  background-color: #333333;
 }
 /*# sourceMappingURL=style.css.map */

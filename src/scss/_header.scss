@@ -27,7 +27,7 @@ header {
     position: relative;
     z-index: 9;
     color: white;
-    // margin-bottom: 50px;
+    margin-top: 40px;
 
     img {
       width: 150px;
@@ -61,19 +61,22 @@ header {
       }
     }
   }
+}
 
-  // .scroll-it {
-  //   position: absolute;
-  //   bottom: 140px;
-  //   z-index: 998;
-  //   cursor: pointer;
+.banner-league {
+  background-color: rgb(189, 224, 255);
+  text-align: center;
+  padding: 18px 0;
 
-  //   @include breakpoint(md) {
-  //     bottom: 38px;
-  //   }
+  @include breakpoint(md) {
+    padding: 50px 0;
+  }
 
-  //   img {
-  //     width: 18px;
-  //   }
-  // }
+  svg {
+    width: 150px;
+
+    @include breakpoint(md) {
+      width: 300px;
+    }
+  }
 }
