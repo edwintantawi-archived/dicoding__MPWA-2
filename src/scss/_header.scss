@@ -27,7 +27,7 @@ header {
     position: relative;
     z-index: 9;
     color: white;
-    // margin-top: 26px;
+    margin-bottom: 50px;
 
     img {
       width: 150px;
@@ -64,7 +64,7 @@ header {
 
   .scroll-it {
     position: absolute;
-    bottom: 120px;
+    bottom: 200px;
     z-index: 998;
     cursor: pointer;
 
