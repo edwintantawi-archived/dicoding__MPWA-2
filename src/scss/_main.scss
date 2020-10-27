@@ -1,0 +1,7 @@
+main {
+  margin-top: 32px;
+
+  @include breakpoint(md) {
+    margin-top: 50px;
+  }
+}

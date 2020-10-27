@@ -1,0 +1,38 @@
+* {
+  transition: background-color 500ms ease-in-out, transform 500ms ease-in-out,
+    background-image 500ms ease-in-out;
+}
+body.dark-mode {
+  background-color: $primaryDark;
+  color: $white;
+
+  nav {
+    &.shownav {
+      background-color: $secondaryDark;
+    }
+  }
+
+  .dark-mode {
+    .toggle-body {
+      background-color: $secondary;
+    }
+    .toggle-dot {
+      background-color: white;
+      transform: translateX(155%);
+
+      @include breakpoint(md) {
+        transform: translateX(175%);
+      }
+    }
+  }
+
+  #mobile-nav {
+    background-color: $secondaryDark;
+  }
+
+  header {
+    &::after {
+      background-image: radial-gradient(#0000007e, $primaryDark);
+    }
+  }
+}

@@ -1,0 +1,147 @@
+nav {
+  background-color: transparent;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  box-shadow: none;
+
+  &.shownav {
+    background-color: $primary;
+  }
+
+  @include breakpoint(md) {
+    height: 100px;
+  }
+
+  .brand-logo {
+    position: unset;
+    .wrap {
+      display: flex;
+      align-items: center;
+      img {
+        height: 54px;
+
+        @include breakpoint(md) {
+          height: 64px;
+        }
+      }
+    }
+  }
+  #navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  #navigation li {
+    a {
+      padding: 0;
+      margin: 0 26px;
+      position: relative;
+      display: flex;
+
+      i {
+        margin-right: 6px;
+      }
+
+      &.active {
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: auto;
+          width: 100%;
+          height: 4px;
+          border-radius: 9px;
+          background-color: $secondary;
+          transition: 300ms;
+        }
+      }
+    }
+    &:last-child a {
+      margin-right: 0;
+    }
+  }
+
+  // dark mode toggle
+  .dark-mode {
+    position: relative;
+    top: 50%;
+    transform: translateY(40%);
+    margin-left: 24px;
+
+    .toggle-body {
+      width: 66px;
+      align-items: center;
+      background-color: white;
+      border-radius: 50px;
+      padding: 4.5px;
+      margin-left: 12px;
+      cursor: pointer;
+
+      @include breakpoint(md) {
+        padding: 5px;
+        width: 76px;
+      }
+
+      .toggle-dot {
+        width: 22px;
+        height: 22px;
+        border-radius: 50px;
+        background-color: $secondary;
+
+        @include breakpoint(md) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
+
+#mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  text-align: center;
+  background-color: $primary;
+  margin: 0;
+  // border-top-left-radius: 16px;
+  // border-top-right-radius: 16px;
+  overflow: hidden;
+
+  @include breakpoint(lg) {
+    display: none;
+  }
+
+  li a {
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 12px 12px;
+    position: relative;
+    width: 100%;
+
+    &.active {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: auto;
+        width: 100%;
+        height: 4px;
+        border-radius: 9px;
+        background-color: $secondary;
+        transition: 300ms;
+      }
+    }
+  }
+}
