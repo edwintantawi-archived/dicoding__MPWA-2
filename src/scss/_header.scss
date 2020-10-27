@@ -27,7 +27,11 @@ header {
     position: relative;
     z-index: 9;
     color: white;
-    margin-top: 40px;
+    margin-top: 0;
+
+    @include breakpoint(md) {
+      margin-top: 40px;
+    }
 
     img {
       width: 150px;

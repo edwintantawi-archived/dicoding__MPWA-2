@@ -244,7 +244,13 @@ header .hero {
   position: relative;
   z-index: 9;
   color: white;
-  margin-top: 40px;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  header .hero {
+    margin-top: 40px;
+  }
 }
 
 header .hero img {
