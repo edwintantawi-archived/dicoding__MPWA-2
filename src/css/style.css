@@ -6,10 +6,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  height: 9999px;
-}
-
 h1 {
   margin: 0 0 24px 0;
 }
@@ -30,7 +26,7 @@ h1 {
 }
 
 nav {
-  background-color: transparent;
+  background-color: #00204f;
   height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -302,12 +298,12 @@ header .hero p {
 .banner-league {
   background-color: #bde0ff;
   text-align: center;
-  padding: 18px 0;
+  padding: 100px 0 18px;
 }
 
 @media (min-width: 768px) {
   .banner-league {
-    padding: 50px 0;
+    padding: 160px 0 60px;
   }
 }
 
@@ -318,17 +314,6 @@ header .hero p {
 @media (min-width: 768px) {
   .banner-league svg {
     width: 300px;
-  }
-}
-
-#topstart {
-  position: absolute;
-  bottom: 85px;
-}
-
-@media (min-width: 768px) {
-  #topstart {
-    bottom: 100px;
   }
 }
 
@@ -480,7 +465,7 @@ body.dark-mode {
   color: white;
 }
 
-body.dark-mode nav.shownav {
+body.dark-mode nav {
   background-color: #1d1d1d;
 }
 

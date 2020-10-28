@@ -9,7 +9,7 @@ class NavBar extends HTMLElement{
       <nav>
         <div class="container">
           <div class="nav-wrapper">
-            <a href="/" class="left brand-logo">
+            <a href="#home" class="left brand-logo">
               <div class="wrap">
                 <img src="src/assets/logo/logo-full.png" alt="Football Laeague">
               </div>
@@ -24,9 +24,9 @@ class NavBar extends HTMLElement{
             </div>
 
             <ul id="navigation" class="right hide-on-med-and-down">
-              <li><a href="/index.html#topstart" class="active"><i class="material-icons">equalizer</i> Standing's</a></li>
-              <li><a href="#"><i class="material-icons">people</i> Team's</a></li>
-              <li><a href="#"><i class="material-icons">bookmark</i> Bookmark</a></li>
+              <li><a href="#standings" class="standings"><i class="material-icons">equalizer</i> Standing's</a></li>
+              <li><a href="#teams" class="teams"><i class="material-icons">people</i> Team's</a></li>
+              <li><a href="#bookmark" class="bookmark"><i class="material-icons">bookmark</i> Bookmark</a></li>
             </ul>
 
 
@@ -35,15 +35,15 @@ class NavBar extends HTMLElement{
         </div>
       </nav>
       <ul id="mobile-nav">
-        <li><a href="#" class="waves-effect waves-dark">
+        <li><a href="#teams" class="teams waves-effect waves-dark">
           <i class="material-icons">people</i>
           <small>Team's</small>
           </a></li>
-          <li><a href="/index.html#topstart" class="active waves-effect waves-dark">
+          <li><a href="#standings" class=" standingswaves-effect waves-dark">
           <i class="material-icons">equalizer</i>
           <small>Standing's</small>
           </a></li>
-          <li><a href="#" class="waves-effect waves-dark">
+          <li><a href="#bookmark" class="bookmark waves-effect waves-dark">
           <i class="material-icons">bookmark</i>
           <small>Bookmark</small>
         </a></li>

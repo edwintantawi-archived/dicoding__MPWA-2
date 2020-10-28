@@ -72,10 +72,10 @@ header {
 .banner-league {
   background-color: rgb(189, 224, 255);
   text-align: center;
-  padding: 18px 0;
+  padding: 100px 0 18px;
 
   @include breakpoint(md) {
-    padding: 50px 0;
+    padding: 160px 0 60px;
   }
 
   svg {
@@ -84,14 +84,5 @@ header {
     @include breakpoint(md) {
       width: 300px;
     }
-  }
-}
-
-#topstart {
-  position: absolute;
-  bottom: 85px;
-
-  @include breakpoint(md) {
-    bottom: 100px;
   }
 }

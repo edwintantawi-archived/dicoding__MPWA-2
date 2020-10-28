@@ -65,7 +65,7 @@ const getStandings = async () => {
   }
 }
 
-getStandings();
+
 
 
 
