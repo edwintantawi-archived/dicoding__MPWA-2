@@ -34,7 +34,7 @@ main {
     }
     .standing-cards {
       background-color: white;
-      // border: 1px solid black;
+      position: relative;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       text-align: center;
       color: $primaryDark;

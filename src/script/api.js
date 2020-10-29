@@ -15,7 +15,15 @@ const getStandings = async () => {
     standings.forEach(function (standing) {
       dataHTML += `
         <div class="col s12 m6 xl4">
-          <div class="standing-cards">
+        <div class="standing-cards">
+          
+          <div class="makeToBookmark">
+            <div class="infoDetail">
+              Save to Bookmark
+            </div>
+            <i class="material-icons bookmarkicon">bookmark_border</i>
+          </div>
+
             <div class="logo">
             <img src="${standing.team.crestUrl}" alt="${standing.team.name}">
             </div>

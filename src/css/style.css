@@ -77,6 +77,48 @@ h1 {
   }
 }
 
+.makeToBookmark {
+  position: absolute;
+  right: 16px;
+}
+
+.makeToBookmark:hover .infoDetail {
+  visibility: visible;
+}
+
+.makeToBookmark i {
+  font-size: 50px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .makeToBookmark i {
+    font-size: 60px;
+  }
+}
+
+.makeToBookmark .infoDetail {
+  visibility: hidden;
+  position: absolute;
+  width: 100px;
+  top: -38px;
+  right: -24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 10px;
+  padding: 2px;
+  font-size: 11px;
+  cursor: default;
+}
+
+@media (min-width: 768px) {
+  .makeToBookmark .infoDetail {
+    right: -18px;
+    top: -40px;
+    font-size: 12px;
+  }
+}
+
 nav {
   background-color: #00204f;
   height: 80px;
@@ -415,6 +457,7 @@ main .standings .col {
 
 main .standings .standing-cards {
   background-color: white;
+  position: relative;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;

@@ -65,3 +65,42 @@ h1 {
     }
   }
 }
+
+.makeToBookmark {
+  position: absolute;
+  right: 16px;
+
+  &:hover {
+    .infoDetail {
+      visibility: visible;
+    }
+  }
+  i {
+    font-size: 50px;
+    cursor: pointer;
+
+    @include breakpoint(md) {
+      font-size: 60px;
+    }
+  }
+
+  .infoDetail {
+    visibility: hidden;
+    position: absolute;
+    width: 100px;
+    top: -38px;
+    right: -24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 10px;
+    padding: 2px;
+    font-size: 11px;
+    cursor: default;
+
+    @include breakpoint(md) {
+      right: -18px;
+      top: -40px;
+      font-size: 12px;
+    }
+  }
+}

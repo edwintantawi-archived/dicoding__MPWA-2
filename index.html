@@ -25,6 +25,11 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <!-- Css -->
   <link rel="stylesheet" href="src/css/style.css">
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#00204f">
+
+
   <title>Football League</title>
 </head>
 <body class="">
@@ -44,8 +49,29 @@
 
   <!-- Materialize JS -->
   <script src="src/materialize/materialize.min.js"></script>
+  <script src="src/idb/idb.js"></script>
+  <script src="src/script/db.js"></script>
   <script src="src/script/main.js" type="module"></script>
   <script src="src/script/api.js"></script>
+
+
+  <script>
+    if("serviceWorker" in navigator){
+      window.addEventListener("load", function(){
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(function(){
+            console.log("Pendaftaran ServiceWorker berhasil");
+          })
+          .catch(function(){
+            console.log("Pendaftaran ServiceWorker gagal");
+          });
+      });
+    } else {
+      console.log("ServiceWorker belum didukung browser");
+    }
+  </script>
+
 </body>
 </html>
 

@@ -1,0 +1,17 @@
+{
+  "name": "FootBall League",
+  "short_name": "FBL",
+  "description": "Dapatkan informasi mengenai informasi pertandingan sepak bola secara detail",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#00204f",
+  "theme_color": "#00204f",
+  "icons":[
+    {
+      "src": "/src/assets/logo/mask.png",
+      "sizes": "404x404",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
