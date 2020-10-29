@@ -341,12 +341,12 @@ main h3 {
   }
 }
 
-main .standings h2 {
+main h2 {
   font-size: 32px;
 }
 
 @media (min-width: 768px) {
-  main .standings h2 {
+  main h2 {
     font-size: 52px;
   }
 }

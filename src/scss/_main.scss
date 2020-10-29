@@ -17,14 +17,14 @@ main {
     }
   }
 
+  h2 {
+    font-size: 32px;
+    @include breakpoint(md) {
+      font-size: 52px;
+    }
+  }
   // standings page
   .standings {
-    h2 {
-      font-size: 32px;
-      @include breakpoint(md) {
-        font-size: 52px;
-      }
-    }
     .col {
       padding: 0;
 
