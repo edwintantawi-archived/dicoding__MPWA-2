@@ -35,12 +35,12 @@ main {
     .standing-cards {
       background-color: white;
       // border: 1px solid black;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       text-align: center;
       color: $primaryDark;
       padding: 32px 16px 16px;
       border-radius: 6px;
-      margin-bottom: 12px;
+      margin-bottom: 22px;
       height: auto;
       display: flex;
       flex-direction: column;
@@ -116,29 +116,36 @@ main {
   .matches {
     .wrap {
       display: grid;
-      grid-template-columns: 2fr 1fr 2fr;
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-items: center;
       padding: 36px 16px;
+      row-gap: 12px;
       @include breakpoint(md) {
         padding: 40px 28px;
+        column-gap: 20px;
+        grid-template-columns: 2fr 1fr 2fr;
       }
     }
     .match-cards {
       border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       // height: 300px;
       overflow: hidden;
-      margin-bottom: 12px;
+      margin-bottom: 22px;
 
-      h3 {
-        font-size: 16px;
-
-        @include breakpoint(md) {
-          font-size: 28px;
-        }
+      @include breakpoint(md) {
+        margin-bottom: 32px;
       }
 
-      & > div {
+      h3 {
+        font-size: 24px;
         text-align: center;
+        margin: 0;
+
+        @include breakpoint(xl) {
+          font-size: 26px;
+        }
       }
 
       img {
@@ -148,10 +155,6 @@ main {
           width: 150px;
         }
       }
-
-      .left {
-        // background-color: red;
-      }
       .center {
         // background-color: green;
         display: flex;
@@ -160,31 +163,37 @@ main {
         align-items: center;
         .text {
           font-size: 12px;
-          font-weight: 700;
+          font-weight: 300;
+          display: none;
+
           @include breakpoint(sm) {
             font-size: 16px;
           }
           @include breakpoint(md) {
+            display: block;
             font-size: 20px;
           }
-          @include breakpoint(md) {
+          @include breakpoint(xl) {
             font-size: 24px;
           }
         }
 
         .point {
-          font-size: 23px;
+          font-size: 33px;
           font-weight: 900;
           color: $secondary;
 
+          // @media (max-width: 354px) {
+          //   font-size: 18px;
+          // }
           @include breakpoint(sm) {
             font-size: 34px;
           }
           @include breakpoint(md) {
-            font-size: 44px;
+            font-size: 34px;
           }
           @include breakpoint(xl) {
-            font-size: 60px;
+            font-size: 50px;
             font-weight: 900;
           }
 
@@ -198,13 +207,11 @@ main {
       }
       .date {
         padding: 6px 0;
-        background-color: $attr;
+        background-color: rgba(202, 202, 202, 0.356);
         font-size: 12px;
+        text-align: center;
         @include breakpoint(md) {
           font-size: 18px;
-        }
-        span {
-          margin: 0 8px;
         }
       }
     }

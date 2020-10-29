@@ -47,6 +47,8 @@ function loadPage (page) {
 
       if(page === "standings"){
         getStandings();
+      } else if(page === "matches"){
+        getMatches();
       }
 
       if(this.status === 200){

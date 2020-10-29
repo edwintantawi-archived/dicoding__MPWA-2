@@ -25,6 +25,58 @@ h1 {
   background: #dba527;
 }
 
+.gotop {
+  visibility: hidden;
+  position: fixed;
+  right: 10px;
+  bottom: -80px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #00204f;
+  color: white;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+.gotop i {
+  font-size: 30px;
+}
+
+@media (min-width: 992px) {
+  .gotop {
+    right: 50px;
+    bottom: -50px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+  }
+  .gotop i {
+    font-size: 50px;
+  }
+}
+
+.gotop.show {
+  visibility: visible;
+  bottom: 80px;
+}
+
+@media (min-width: 992px) {
+  .gotop.show {
+    bottom: 50px;
+  }
+}
+
 nav {
   background-color: #00204f;
   height: 80px;
@@ -363,13 +415,13 @@ main .standings .col {
 
 main .standings .standing-cards {
   background-color: white;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   color: #242424;
   padding: 32px 16px 16px;
   border-radius: 6px;
-  margin-bottom: 12px;
+  margin-bottom: 22px;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -473,37 +525,50 @@ main .standings .standing-cards .detail .line span i.fa-futbol {
 main .matches .wrap {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 1fr 2fr;
-      grid-template-columns: 2fr 1fr 2fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
   padding: 36px 16px;
+  row-gap: 12px;
 }
 
 @media (min-width: 768px) {
   main .matches .wrap {
     padding: 40px 28px;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+    -ms-grid-columns: 2fr 1fr 2fr;
+        grid-template-columns: 2fr 1fr 2fr;
   }
 }
 
 main .matches .match-cards {
   border-radius: 6px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  margin-bottom: 12px;
-}
-
-main .matches .match-cards h3 {
-  font-size: 16px;
+  margin-bottom: 22px;
 }
 
 @media (min-width: 768px) {
-  main .matches .match-cards h3 {
-    font-size: 28px;
+  main .matches .match-cards {
+    margin-bottom: 32px;
   }
 }
 
-main .matches .match-cards > div {
+main .matches .match-cards h3 {
+  font-size: 24px;
   text-align: center;
+  margin: 0;
+}
+
+@media (min-width: 1200px) {
+  main .matches .match-cards h3 {
+    font-size: 26px;
+  }
 }
 
 main .matches .match-cards img {
@@ -534,7 +599,8 @@ main .matches .match-cards .center {
 
 main .matches .match-cards .center .text {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 300;
+  display: none;
 }
 
 @media (min-width: 576px) {
@@ -545,18 +611,19 @@ main .matches .match-cards .center .text {
 
 @media (min-width: 768px) {
   main .matches .match-cards .center .text {
+    display: block;
     font-size: 20px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   main .matches .match-cards .center .text {
     font-size: 24px;
   }
 }
 
 main .matches .match-cards .center .point {
-  font-size: 23px;
+  font-size: 33px;
   font-weight: 900;
   color: #dba527;
 }
@@ -569,13 +636,13 @@ main .matches .match-cards .center .point {
 
 @media (min-width: 768px) {
   main .matches .match-cards .center .point {
-    font-size: 44px;
+    font-size: 34px;
   }
 }
 
 @media (min-width: 1200px) {
   main .matches .match-cards .center .point {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 900;
   }
 }
@@ -592,18 +659,15 @@ main .matches .match-cards .center .point span {
 
 main .matches .match-cards .date {
   padding: 6px 0;
-  background-color: #f7fdff;
+  background-color: rgba(202, 202, 202, 0.356);
   font-size: 12px;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   main .matches .match-cards .date {
     font-size: 18px;
   }
-}
-
-main .matches .match-cards .date span {
-  margin: 0 8px;
 }
 
 footer {
@@ -676,6 +740,10 @@ body.dark-mode .matches .match-cards {
 }
 
 body.dark-mode .matches .match-cards .date {
+  background-color: #1d1d1d;
+}
+
+body.dark-mode .gotop {
   background-color: #1d1d1d;
 }
 /*# sourceMappingURL=style.css.map */

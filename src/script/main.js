@@ -1,14 +1,18 @@
 import "./components/navbar/app-navbar.js";
 import "./renderPages.js"
 // X-Auth-Key : b0825830f1724f13987c4b6ffb0ab92f
-const page = window.location.hash.substr(1);
 
-const navBar = document.querySelector("nav");
-// if(page === "" || page === "home"){
-//   navBar.style.backgroundColor = "transparent";
-// } else{
-//   navBar.style.backgroundColor = white;
-// }
+// go to top button
+const gtButton = document.querySelector(".gotop");
+
+document.addEventListener("scroll", function(){
+  const scrollPos = window.pageYOffset;
+  if(scrollPos > 1000){
+  gtButton.classList.add("show");
+  } else{
+  gtButton.classList.remove("show");
+  }
+});
 
 // set theme from loacal storage
 

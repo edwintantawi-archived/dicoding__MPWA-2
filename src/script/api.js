@@ -84,10 +84,35 @@ const getMatches = async () => {
     const matches = data.matches;
     let dataHTML = "";
     matches.forEach(function(match){
-      // 
+      dataHTML += `
+      <!-- render js -->
+      <div class="col s12">
+        <div class="match-cards">
+          <div class="wrap">
+            <div class="left">
+              <h3>${match.homeTeam.name}</h3>
+            </div>
+            <div class="center">
+              <span class="text">SCORE:</span>
+              <span class="point">${match.score.fullTime.homeTeam || "0"} <span>:</span> ${match.score.fullTime.awayTeam || "0"}</span>
+              <span></span>
+            </div>
+            <div class="right">
+              <h3>${match.awayTeam.name}</h3>
+            </div>
+          </div>
+          <div class="date">
+               <span class="time">
+              ${match.utcDate.slice(0,10)}
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- end render js -->
+      `;
     })
 
-
+    document.querySelector("#match-list").innerHTML = dataHTML;
     
   } catch (error) {
     console.log(error)
@@ -95,33 +120,20 @@ const getMatches = async () => {
   }
 }
 
-const getTeamById = async idTeam => {
-  try {
-    const respond = await fetch(`${baseUrl}/teams/${idTeam}`, options);
-    const data = await respond.json();
-  return {
-    logo: data.crestUrl,
-    shortName: data.tla
-  }
-  } catch (error) {
-    console.log(error)
-    handleError();
-  }
-}
+// const getTeamById = async idTeam => {
+//   try {
+//     const respond = await fetch(`${baseUrl}/teams/${idTeam}`, options);
+//     const data = await respond.json();
+//     return data.crestUrl;
 
-// console.log(getTeamById(65).then(function(item){console.log(item)}));
+//   } catch (error) {
+//     console.log(error)
+//     handleError();
+//   }
+// }
 
 
-
-
-
-
-
-
-
-
-
-// HANDLE
-const handleError = () => {
-  console.log("Opps.. Somethings Wrong !");
-}
+// // HANDLE
+// const handleError = () => {
+//   console.log("Opps.. Somethings Wrong !");
+// }
