@@ -7,8 +7,8 @@ if ( page === "" ) {
   document.querySelectorAll(".standings").forEach(function(item){
     item.classList.add("active")
   })
-} else if(page === "teams"){
-  document.querySelectorAll(".teams").forEach(function(item){
+} else if(page === "matches"){
+  document.querySelectorAll(".matches").forEach(function(item){
     item.classList.add("active")
   })
 } else if(page === "bookmark"){

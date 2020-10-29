@@ -6,6 +6,17 @@ main {
     margin-top: 50px;
   }
 
+  h3 {
+    margin: 12px 0 21px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+
+    @include breakpoint(md) {
+      font-size: 28px;
+    }
+  }
+
   // standings page
   .standings {
     h2 {
@@ -22,9 +33,11 @@ main {
       }
     }
     .standing-cards {
-      background-color: $attr;
+      background-color: white;
+      // border: 1px solid black;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
-      color: white;
+      color: $primaryDark;
       padding: 32px 16px 16px;
       border-radius: 6px;
       margin-bottom: 12px;
@@ -34,7 +47,7 @@ main {
       justify-content: space-between;
 
       @include breakpoint(sm) {
-        height: 530px;
+        height: 620px;
       }
 
       img {
@@ -44,18 +57,20 @@ main {
         }
       }
 
-      h3 {
-        margin: 12px 0 21px;
-        font-size: 18px;
-        font-weight: 700;
-
+      hr {
+        height: 5px;
+        width: 100px;
+        margin-top: 12px;
+        border-radius: 50px;
+        background-color: $secondary;
+        border: none;
         @include breakpoint(md) {
-          font-size: 26px;
+          margin-top: 0;
         }
       }
 
       .detail {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(206, 206, 206, 0);
         border-radius: 6px;
         padding: 16px;
 
@@ -64,6 +79,7 @@ main {
           justify-content: space-between;
           font-size: 16px;
           padding: 6px 0;
+          font-weight: 500;
 
           @include breakpoint(sm) {
             font-size: 18px;
@@ -73,7 +89,9 @@ main {
             font-weight: 700;
             i {
               margin-right: 8px;
-
+              &.fa-play {
+                color: rgb(33, 177, 33);
+              }
               &.fa-trophy {
                 color: gold;
               }
@@ -81,16 +99,112 @@ main {
                 color: rgb(231, 1, 1);
               }
               &.fa-equals {
-                color: rgb(35, 219, 35);
+                color: rgb(42, 119, 233);
               }
               &.fa-coins {
-                color: yellow;
+                color: rgb(202, 202, 76);
               }
               &.fa-futbol {
-                color: rgb(211, 211, 211);
+                color: rgb(0, 0, 0);
               }
             }
           }
+        }
+      }
+    }
+  }
+  .matches {
+    .wrap {
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr;
+      padding: 36px 16px;
+      @include breakpoint(md) {
+        padding: 40px 28px;
+      }
+    }
+    .match-cards {
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      // height: 300px;
+      overflow: hidden;
+      margin-bottom: 12px;
+
+      h3 {
+        font-size: 16px;
+
+        @include breakpoint(md) {
+          font-size: 28px;
+        }
+      }
+
+      & > div {
+        text-align: center;
+      }
+
+      img {
+        width: 70%;
+
+        @include breakpoint(sm) {
+          width: 150px;
+        }
+      }
+
+      .left {
+        // background-color: red;
+      }
+      .center {
+        // background-color: green;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        .text {
+          font-size: 12px;
+          font-weight: 700;
+          @include breakpoint(sm) {
+            font-size: 16px;
+          }
+          @include breakpoint(md) {
+            font-size: 20px;
+          }
+          @include breakpoint(md) {
+            font-size: 24px;
+          }
+        }
+
+        .point {
+          font-size: 23px;
+          font-weight: 900;
+          color: $secondary;
+
+          @include breakpoint(sm) {
+            font-size: 34px;
+          }
+          @include breakpoint(md) {
+            font-size: 44px;
+          }
+          @include breakpoint(xl) {
+            font-size: 60px;
+            font-weight: 900;
+          }
+
+          span {
+            margin: 0 2px;
+            @include breakpoint(md) {
+              margin: 0 10px;
+            }
+          }
+        }
+      }
+      .date {
+        padding: 6px 0;
+        background-color: $attr;
+        font-size: 12px;
+        @include breakpoint(md) {
+          font-size: 18px;
+        }
+        span {
+          margin: 0 8px;
         }
       }
     }
