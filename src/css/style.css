@@ -119,6 +119,14 @@ h1 {
   }
 }
 
+#loader {
+  position: absolute;
+  right: 50%;
+  top: 360px;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
 nav {
   background-color: #00204f;
   height: 80px;
@@ -603,13 +611,15 @@ main .matches .match-cards {
 }
 
 main .matches .match-cards h3 {
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   margin: 0;
+  font-weight: 500;
 }
 
 @media (min-width: 1200px) {
   main .matches .match-cards h3 {
+    font-weight: 700;
     font-size: 26px;
   }
 }

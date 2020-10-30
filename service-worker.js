@@ -1,4 +1,4 @@
-const CACHE_NAME = "footballleague-v7";
+const CACHE_NAME = "footballleague-v3";
 const urlToCache = [
   "/",
   "/index.html",
@@ -26,7 +26,6 @@ const urlToCache = [
   "/src/assets/logo/logo-full.png",
   "/src/assets/logo/icont144x144.png",
   "/src/assets/logo/icont512x512.png",
-  "/src/assets/logo/mask512x512.png",
 
   "/src/materialize/materialize.min.css",
   "/src/materialize/materialize.min.js",
@@ -49,24 +48,44 @@ self.addEventListener("install", function(event){
 })
 
 self.addEventListener("fetch", function(event){
-  event.respondWith(
-    caches
-      .match(event.request, {cacheName: CACHE_NAME})
-        .then(function(response){
-          if(response){
-            console.log("ServiceWorker: Gunakan aset dari cache: ", response.url);
-            return response;
-          }
 
-          console.log(
-            "ServiceWorker: Memuat aset dari server: ",
-            event.request.url
-          );
+  const baseUrl = "https://api.football-data.org/";
 
-          return fetch(event.request);
-
+  if(event.request.url.indexOf(baseUrl) > -1){
+    event.respondWith(
+      caches.open(CACHE_NAME).then(function(cache){
+        return fetch(event.request).then(function(response){
+          cache.put(event.request.url, response.clone());
+          return response;
         })
-  );
+      })
+    );
+  }else{
+    event.respondWith(
+      caches.match(event.request).then(function(response){
+        return response || fetch(event.request);
+      })
+    );
+  }
+
+  // event.respondWith(
+  //   caches
+  //     .match(event.request, {cacheName: CACHE_NAME})
+  //       .then(function(response){
+  //         if(response){
+  //           console.log("ServiceWorker: Gunakan aset dari cache: ", response.url);
+  //           return response;
+  //         }
+
+  //         console.log(
+  //           "ServiceWorker: Memuat aset dari server: ",
+  //           event.request.url
+  //         );
+
+  //         return fetch(event.request);
+
+  //       })
+  // );
 });
 
 self.addEventListener("activate", function(event){
@@ -74,7 +93,7 @@ self.addEventListener("activate", function(event){
     caches.keys().then(function(cachesNames){
       return Promise.all(
         cachesNames.map(function(cacheName){
-          if(cacheName !== CACHE_NAME){
+          if(cacheName !== CACHE_NAME && cacheName.startsWith("footballleague")){
             console.log("ServiceWorker: cache " + cacheName + " dihapus");
             return caches.delete(cacheName);
           }

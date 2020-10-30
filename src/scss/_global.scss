@@ -104,3 +104,10 @@ h1 {
     }
   }
 }
+
+#loader {
+  position: absolute;
+  right: 50%;
+  top: 360px;
+  transform: translateX(50%);
+}
