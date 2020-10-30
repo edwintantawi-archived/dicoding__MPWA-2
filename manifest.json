@@ -20,7 +20,7 @@
       "purpose": "any"
     },
     {
-      "src": "/src/assets/logo/mask512x512.png",
+      "src": "/src/assets/logo/icont512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
