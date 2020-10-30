@@ -127,6 +127,12 @@ h1 {
           transform: translateX(50%);
 }
 
+@media (min-width: 768px) {
+  #loader {
+    top: 520px;
+  }
+}
+
 nav {
   background-color: #00204f;
   height: 80px;

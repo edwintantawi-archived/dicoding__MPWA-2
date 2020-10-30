@@ -110,4 +110,8 @@ h1 {
   right: 50%;
   top: 360px;
   transform: translateX(50%);
+
+  @include breakpoint(md) {
+    top: 520px;
+  }
 }
