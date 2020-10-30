@@ -44,8 +44,6 @@ const handleError = error => {
   console.log(`Opps.. Somethings Wrong ! ${error}`);
 }
 
-
-
 const getStandings =() => {
   preLoader();
 
@@ -137,6 +135,8 @@ const getStandings =() => {
       const standings = data.standings[0].table;
       let dataHTML = "";
 
+      // id = standings.team.id
+
       standings.forEach(function (standing) {
         dataHTML += `
           <div class="col s12 m6 xl4">
@@ -146,7 +146,12 @@ const getStandings =() => {
               <div class="infoDetail">
                 Save to Bookmark
               </div>
-              <i class="material-icons bookmarkicon">bookmark_border</i>
+                <i
+                class="material-icons bookmarkicon"
+                data-id="${standing.team.id}"
+                >
+                bookmark_border
+                </i>
             </div>
   
               <div class="logo">
@@ -201,15 +206,33 @@ const getStandings =() => {
             </div>
           </div>
         `;
+
+        
       })
       document.querySelector("#standing-list").innerHTML = dataHTML;
       closePreLoader();
 
+      const btnBookmark = document.querySelectorAll(".bookmarkicon");
+      btnBookmark.forEach(function(item){
+        item.addEventListener("click", function(){
+          standings.forEach(function(target){
+            if(target.team.id == item.dataset.id){
+              console.log(target)
+              // insert to db
+            }
+
+          });
+        });
+      })
+      
     })
+    
+   
 
-
+  
   //}
 }
+
 
 const getMatches = () => {
   preLoader();
@@ -294,17 +317,4 @@ const getMatches = () => {
     closePreLoader();
     })
 }
-
-// const getTeamById = async idTeam => {
-//   try {
-//     const respond = await fetch(`${baseUrl}/teams/${idTeam}`, options);
-//     const data = await respond.json();
-//     return data.crestUrl;
-
-//   } catch (error) {
-//     console.log(error)
-//     handleError();
-//   }
-// }
-
 
