@@ -1,4 +1,4 @@
-const CACHE_NAME = "footballleague-v5";
+const CACHE_NAME = "footballleague-v7";
 const urlToCache = [
   "/",
   "/index.html",
@@ -24,8 +24,8 @@ const urlToCache = [
 
   "/src/assets/logo/favicon.ico",
   "/src/assets/logo/logo-full.png",
-  "/src/assets/logo/mask144x144.png",
-  "/src/assets/logo/mask404x404.png",
+  "/src/assets/logo/icont144x144.png",
+  "/src/assets/logo/icont512x512.png",
   "/src/assets/logo/mask512x512.png",
 
   "/src/materialize/materialize.min.css",
