@@ -1,4 +1,4 @@
-const CACHE_NAME = "footballleague-v3";
+const CACHE_NAME = "footballleague-v5";
 const urlToCache = [
   "/",
   "/index.html",
@@ -24,13 +24,16 @@ const urlToCache = [
 
   "/src/assets/logo/favicon.ico",
   "/src/assets/logo/logo-full.png",
-  "/src/assets/logo/mask.png",
+  "/src/assets/logo/mask144x144.png",
+  "/src/assets/logo/mask404x404.png",
+  "/src/assets/logo/mask512x512.png",
 
   "/src/materialize/materialize.min.css",
   "/src/materialize/materialize.min.js",
 
   "/src/css/style.css",
   "/service-worker.js",
+  "/manifest.json",
   "https://use.fontawesome.com/releases/v5.15.1/css/all.css",
   "https://fonts.googleapis.com/icon?family=Material+Icons",
   "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap"

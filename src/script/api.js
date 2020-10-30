@@ -10,6 +10,8 @@ const getStandings = async () => {
   try {
     const respond = await fetch(`${baseUrl}/competitions/${league}/standings?standingType=TOTAL`, options)
     const data = await respond.json();
+    // const repl = await JSON.stringify(data).replace(/http:/g, 'https:');
+    // console.log(repl);
     const standings = data.standings[0].table
     let dataHTML = "";
     standings.forEach(function (standing) {

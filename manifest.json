@@ -8,8 +8,20 @@
   "theme_color": "#00204f",
   "icons":[
     {
-      "src": "/src/assets/logo/mask.png",
+      "src": "/src/assets/logo/mask144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/assets/logo/mask404x404.png",
       "sizes": "404x404",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/src/assets/logo/mask512x512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
