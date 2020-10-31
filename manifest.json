@@ -26,6 +26,5 @@
       "purpose": "maskable"
     }
   ],
-    "name": "Push Notifications FCM",
     "gcm_sender_id": "986950567379"
 }
