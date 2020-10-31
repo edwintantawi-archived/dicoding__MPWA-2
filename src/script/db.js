@@ -1,8 +1,8 @@
-const dbPromised = idb.open("football-league", 1, function(upgradeDb){
+const dbPromised = idb.open("footballleague", 1, function(upgradeDb){
   const standingsObjectStore = upgradeDb.createObjectStore("standings", {
-    keyPath: "ID"
+    keyPath: "team.id"
   });
-  standingsObjectStore.createIndex("standing_team", "standing_team", {unique: true});
+  standingsObjectStore.createIndex("name", "team.name", {unique: false});
 });
 
 
@@ -10,15 +10,52 @@ const dbPromised = idb.open("football-league", 1, function(upgradeDb){
 const saveToBookmark = standing =>{
   dbPromised
     .then(function(db){
-      const tx = db.transaction("standings", "readwrite");
-      const store = tx.objectStore("standings");
-      console.log(standing);
+      const tx = db.transaction('standings', 'readwrite');
+      const store = tx.objectStore('standings');
       store.add(standing);
-    })
-    .then(function(){
-      showToast("Standing Team has been successfully added to the bookmark")
-    });
+      return tx.complete;
+  }).then(function() {
+      checkBookmarked(standing.team.id);
+      showToast(`${standing.team.name} has been added to the bookmark`);
+    }).catch(function() {
+      removeFromBookmark(standing.team.id);
+      removeBookmark(standing.team.id);
+      showToast(`${standing.team.name} has been deleted to the bookmark`);
+  })
 };
+
+const removeFromBookmark = id => {
+  dbPromised
+    .then(function(db){
+      const tx = db.transaction('standings', 'readwrite');
+      const store = tx.objectStore('standings');
+      store.delete(id);
+      return tx.complete;
+    });
+}
+
+const checkBookmarked = id =>{
+  dbPromised
+    .then(function(db){
+      const tx = db.transaction('standings', 'readonly');
+      const store = tx.objectStore('standings');
+      return store.getAll();
+    })
+    .then(function(standings){
+      standings.forEach(function(standing){
+        if(standing.team.id == id){
+          const btnBookmark = document.querySelector(`[data-id='${id}']`);
+          btnBookmark.innerHTML = "bookmark"
+        }
+ 
+      });
+    })
+}
+
+const removeBookmark = id =>{
+  const btnBookmark = document.querySelector(`[data-id='${id}']`);
+  btnBookmark.innerHTML = "bookmark_border"
+}
 
 // toast
 const showToast = text => {

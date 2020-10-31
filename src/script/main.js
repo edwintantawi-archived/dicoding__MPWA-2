@@ -39,9 +39,19 @@ viewMode.addEventListener("click", function(){
   }
 });
 
+checkBookmarked()
 
 
+// document.addEventListener("DOMContentLoaded", function(){
+//   const btnBookmark = document.querySelectorAll("i.bookmarkicon");
+// console.log(btnBookmark)
+// btnBookmark.forEach(function(bookmark){
+//   bookmark.addEventListener("click", function(e){
+//     console.log(bookmark.getAttribute("data-id"))
+//         })
+//       })
 
+// })
 
 
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = "footballleague-v3";
+const CACHE_NAME = "footballleague-v1";
 const urlToCache = [
   "/",
   "/index.html",
@@ -7,7 +7,7 @@ const urlToCache = [
   "/src/pages/matches.html",
   "/src/pages/standings.html",
 
-  "/src/idb/idb.js",
+  "/node_modules/idb/lib/idb.js",
   "/src/script/components/app-navbar.js",
   "/src/script/db.js",
   "/src/script/api.js",

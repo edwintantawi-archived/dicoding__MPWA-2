@@ -46,7 +46,7 @@ function loadPage (page) {
     if(this.readyState === 4){
 
       if(page === "standings"){
-        getStandings();
+        getStandings()
       } else if(page === "matches"){
         getMatches();
       }
