@@ -1,4 +1,4 @@
-const CACHE_NAME = "footballleague-v3";
+const CACHE_NAME = "footballleague-v4";
 const urlToCache = [
   "/",
   "/index.html",
