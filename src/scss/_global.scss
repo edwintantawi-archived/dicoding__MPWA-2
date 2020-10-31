@@ -72,7 +72,11 @@ h1 {
 
   &:hover {
     .infoDetail {
-      visibility: visible;
+      visibility: hidden;
+
+      @include breakpoint(lg) {
+        visibility: visible;
+      }
     }
   }
 
@@ -114,5 +118,16 @@ h1 {
 
   @include breakpoint(md) {
     top: 520px;
+  }
+}
+
+.emptyicon {
+  width: 200px;
+  text-align: center;
+  margin-top: 10px;
+
+  @include breakpoint(md) {
+    margin-top: 60px;
+    width: 300px;
   }
 }

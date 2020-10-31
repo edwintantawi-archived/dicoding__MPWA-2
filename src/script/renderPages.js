@@ -19,9 +19,6 @@ if ( page === "" ) {
 
 loadPage(page);
 
-if( page === "standings" ){
-  
-}
 
 const navigationMenu = document.querySelectorAll("#navigation li a, #mobile-nav li a, .brand-logo");
 
@@ -49,6 +46,8 @@ function loadPage (page) {
         getStandings()
       } else if(page === "matches"){
         getMatches();
+      } else if(page === "bookmark"){
+        getSavedBookmark();
       }
 
       if(this.status === 200){

@@ -83,7 +83,13 @@ h1 {
 }
 
 .makeToBookmark:hover .infoDetail {
-  visibility: visible;
+  visibility: hidden;
+}
+
+@media (min-width: 992px) {
+  .makeToBookmark:hover .infoDetail {
+    visibility: visible;
+  }
 }
 
 .makeToBookmark i {
@@ -130,6 +136,19 @@ h1 {
 @media (min-width: 768px) {
   #loader {
     top: 520px;
+  }
+}
+
+.emptyicon {
+  width: 200px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .emptyicon {
+    margin-top: 60px;
+    width: 300px;
   }
 }
 
@@ -727,6 +746,10 @@ main .matches .match-cards .date {
   main .matches .match-cards .date {
     font-size: 18px;
   }
+}
+
+main #bookmark-list {
+  text-align: center;
 }
 
 footer {

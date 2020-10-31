@@ -52,6 +52,18 @@ const checkBookmarked = id =>{
     })
 }
 
+const getSavedBookmark = () => {
+  dbPromised
+    .then(function(db){
+      const tx = db.transaction('standings', 'readwrite');
+      const store = tx.objectStore('standings');
+      return store.getAll();
+    }).then(function(bookmarkItems){
+      // console.log(bookmarkItems)
+      getBookmarks(bookmarkItems);
+    })
+}
+
 const removeBookmark = id =>{
   const btnBookmark = document.querySelector(`[data-id='${id}']`);
   btnBookmark.innerHTML = "bookmark_border"

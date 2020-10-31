@@ -366,3 +366,102 @@ const getMatches = () => {
     })
 }
 
+const getBookmarks = (bookmarkItems) =>{
+  let dataHTML = "";
+  if(bookmarkItems == 0){
+    dataHTML = `<img src="/src/assets/images/empty.svg" alt="empty bookmark" class="emptyicon"><p>Bookmark is Empty</p>`;
+  } else{
+    console.log("empty")
+    bookmarkItems.forEach(function(bookmarkItem){
+
+      checkBookmarked(bookmarkItem.team.id);
+  
+  
+      dataHTML += `
+              <div class="col s12 m6 xl4">
+              <div class="standing-cards">
+                
+                <div class="makeToBookmark">
+                  <div class="infoDetail">
+                    Save to Bookmark
+                  </div>
+                    <i
+                    class="material-icons bookmarkicon"
+                    data-id="${bookmarkItem.team.id}"
+                   
+                    >
+                    bookmark_border
+                    </i>
+                </div>
+      
+                  <div class="logo">
+                  <img src="${bookmarkItem.team.crestUrl}" alt="${bookmarkItem.team.name}">
+                  </div>
+                <h3>${bookmarkItem.team.name}</h3>
+                <hr>
+                <div class="detail">
+                    <div class="line">
+                      <span>
+                      <i class="fas fa-hashtag"></i> Position
+                      </span>
+                      ${bookmarkItem.position}
+                    </div>
+                    <div class="line">
+                      <span>
+                      <i class="fas fa-play"></i> Play
+                      </span>
+                      ${bookmarkItem.playedGames}
+                    </div>
+                    <div class="line">
+                      <span>
+                        <i class="fas fa-trophy"></i> Won
+                      </span>
+                      ${bookmarkItem.won}
+                    </div>
+                    <div class="line">
+                      <span>
+                        <i class="fas fa-window-close"></i> Lost
+                      </span>
+                      ${bookmarkItem.lost}
+                    </div>
+                    <div class="line">
+                      <span>
+                        <i class="fas fa-equals"></i> Draw
+                      </span>
+                      ${bookmarkItem.draw}
+                    </div>
+                    <div class="line">
+                      <span>
+                        <i class="fas fa-coins"></i> Points
+                      </span>
+                      ${bookmarkItem.points}
+                    </div>
+                    <div class="line">
+                      <span>
+                        <i class="fas fa-futbol"></i> Goals
+                      </span>
+                      ${bookmarkItem.goalsFor}
+                    </div>
+                </div>
+                </div>
+              </div>
+            `;
+    })
+  }
+  
+  document.querySelector("#bookmark-list").innerHTML = dataHTML;
+  const btnBookmark = document.querySelectorAll(".bookmarkicon");
+  btnBookmark.forEach(function(bookmark){
+    bookmark.addEventListener("click", function(){
+      bookmarkItems.forEach(function(standing){
+        checkBookmarked(standing.team.id);
+        if(standing.team.id == bookmark.dataset.id){
+          removeFromBookmark(standing.team.id);
+          getSavedBookmark();
+        }
+      })
+      // bookmarked(bookmark.dataset.id);
+    })
+  })
+}
+

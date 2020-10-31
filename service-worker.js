@@ -1,4 +1,4 @@
-const CACHE_NAME = "footballleague-v1";
+const CACHE_NAME = "footballleague-v2";
 const urlToCache = [
   "/",
   "/index.html",
@@ -21,6 +21,7 @@ const urlToCache = [
 
   "/src/assets/images/banner.jpg",
   "/src/assets/images/premier-league.svg",
+  "/src/assets/images/empty.svg",
 
   "/src/assets/logo/favicon.ico",
   "/src/assets/logo/logo-full.png",
