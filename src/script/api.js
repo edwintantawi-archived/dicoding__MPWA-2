@@ -142,17 +142,16 @@ const getStandings =() => {
                       saveToBookmark(standing);
                     }
                   })
-                  // bookmarked(bookmark.dataset.id);
                 })
               })
-// 
+
             closePreLoader();
             resolve(standings);
-            // end
+
             })
           }
         })
-    } //else {
+    } 
   
       fetch(`${baseUrl}/competitions/${league}/standings?standingType=TOTAL`, options)
       .then(status)
@@ -160,8 +159,6 @@ const getStandings =() => {
       .then(function(data){
         const standings = data.standings[0].table;
         let dataHTML = "";
-  
-        // id = standings.team.id
   
         standings.forEach(function (standing) {
           const logo = standing.team.crestUrl.replace(/^http:\/\//i, 'https://');
@@ -249,10 +246,10 @@ const getStandings =() => {
                 saveToBookmark(standing);
               }
             })
-            // bookmarked(bookmark.dataset.id);
+
           })
         })
-        // 
+        
         closePreLoader();
         resolve(standings);
   
@@ -265,17 +262,9 @@ const getStandings =() => {
   }).then(function(standing){
 
       })
-      
-      //}
+    
 }
 
-// const btnBookmark = document.querySelectorAll(".bookmarkicon");
-// console.log(btnBookmark)
-// btnBookmark.forEach(function(bookmark){
-//   bookmark.addEventListener("click", function(){
-//     console.log(bookmark);
-//   })
-// })
 
 const bookmarked = id => {
   console.log(id)
@@ -460,7 +449,6 @@ const getBookmarks = (bookmarkItems) =>{
           getSavedBookmark();
         }
       })
-      // bookmarked(bookmark.dataset.id);
     })
   })
 }
